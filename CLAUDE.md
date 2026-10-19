@@ -1,6 +1,6 @@
 # Portfólio do Carlos Eduardo (v2)
 
-Este repositório (`Projeto-RocketSeat`, GitHub: carloseduardo-rocha) é o portfólio dele. Nasceu no programa Discover da Rocketseat
+Este repositório (`carlos-eduardo-portfolio` (antes `Projeto-RocketSeat`), GitHub: carloseduardo-rocha) é o portfólio dele. Nasceu no programa Discover da Rocketseat
 (v1: HTML/CSS/JS puro no GitHub Pages) e foi reconstruído em Vite + React (v2, deploy na Vercel).
 A v1 está guardada **intacta** em `versoes-antigas/v1-github-pages/` (abre com Live Server; tem o CLAUDE.md e o README antigos).
 A v1 NÃO leva hotfix: tudo se corrige na v2. Tags: `v1.0.0` = último commit da v1 (d59237a), `v2.0.0` = a reconstrução.
