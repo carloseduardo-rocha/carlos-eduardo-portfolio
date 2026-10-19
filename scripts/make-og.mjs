@@ -19,7 +19,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
   <g transform="translate(300 315)">
     <circle r="158" fill="none" stroke="#22e6ff" stroke-width="1.5" opacity="0.5"/>
     ${ticks}
-    <text y="34" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="112" fill="#e9f2ff" letter-spacing="4">CE</text>
+    <text y="34" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="112" fill="#e9f2ff" letter-spacing="4">CR</text>
   </g>
   <g font-family="Arial, sans-serif" fill="#e9f2ff">
     <text x="600" y="290" font-size="72" font-weight="700">Carlos Eduardo</text>

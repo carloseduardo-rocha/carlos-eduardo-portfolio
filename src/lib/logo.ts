@@ -13,7 +13,7 @@ export async function loadLogoFont(): Promise<void> {
 }
 
 /**
- * Rasterises the logo (a dotted ring + "CE") on an offscreen canvas and returns
+ * Rasterises the logo (a dotted ring + "CR") on an offscreen canvas and returns
  * `count` random points that sit on the ink. Swap the drawing code to change
  * the logo — the rest of the pipeline doesn't care what the shape is.
  */
@@ -50,7 +50,7 @@ export function sampleLogo(count: number): {
   ctx.font = `700 ${SIZE * 0.4}px "Space Grotesk Variable", Inter, system-ui, sans-serif`
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
-  ctx.fillText('CE', c, c + SIZE * 0.02)
+  ctx.fillText('CR', c, c + SIZE * 0.02)
 
   const { data } = ctx.getImageData(0, 0, SIZE, SIZE)
   const ring: number[] = []

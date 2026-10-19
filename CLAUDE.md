@@ -32,7 +32,7 @@ Fontes: Space Grotesk (display), Inter (texto), JetBrains Mono (rótulos) — s�
 - No fim da página, wheel/touch extra (Observer) enche a barra `--loop` e reinicia no topo (véu curto esconde o salto).
 - Scroll é nativo (teclado, barra e momentum do iOS funcionam). "Pular intro" existe.
 - `prefers-reduced-motion`, `Save-Data` e falha de WebGL → página normal (`html[data-gl="off"]`, ver `index.css`).
-- Logo = `drawing` em `src/lib/logo.ts` (anel + "CE"); trocar o desenho troca a logo das partículas.
+- Logo = `drawing` em `src/lib/logo.ts` (anel + "CR"); trocar o desenho troca a logo das partículas.
 
 ## Comandos
 `npm run dev` (Vite) · `npm run build` (tsc + vite build) · `npm run preview`
@@ -40,7 +40,7 @@ Fontes: Space Grotesk (display), Inter (texto), JetBrains Mono (rótulos) — s�
 ## Decisões já tomadas
 - **Cargo = Desenvolvedor Full Stack** (ele disse "hoje sou fullstack", 19/10/2026; mantém foco em back-end). No GestãoCheck o papel
   continua "desenvolvedor back-end (freelancer)" porque é o que ele faz lá. Hero tem o bloco estilo terminal (whoami / stack / status).
-- Logo das partículas = "CE" (não usar a engrenagem). Fotos: escuro = `public/photos/carlos.jpg` (camisa azul-marinho), claro =
+- Logo das partículas = "CR" (era "CE", mas parecia Ceará) (não usar a engrenagem). Fotos: escuro = `public/photos/carlos.jpg` (camisa azul-marinho), claro =
   `public/photos/carlos-light.jpg` (camisa branca, vem do avatar-light.png antigo; troca por CSS em `.photo-dark/.photo-light`).
 - Avatar 3D/terminal/SVG foram removidos. Ele mandou 2 ilustrações próprias (19/10/2026): `public/art/desk.webp` (selfie ilustrada no setup) vai em **Sobre**
   (`DeskArt` em `Art.tsx`, com tilt) e `public/art/head.webp` (cabeça 3D com céu) vai em **Contato** (`HeadArt`, flutuando no anel). Fotos reais só no hero.

@@ -14,7 +14,7 @@ export function Header() {
       <div className="header-fade absolute inset-x-0 top-0 h-20" aria-hidden="true" />
       <div className="relative flex items-center justify-between px-6 py-4 md:px-10">
         <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
-          CE · CaduDev
+          CR · CaduDev
         </span>
         <div className="pointer-events-auto flex items-center gap-3">
           <m.button

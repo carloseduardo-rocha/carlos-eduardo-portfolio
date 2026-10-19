@@ -1,8 +1,8 @@
 # Portfólio — Carlos Eduardo
 
-**Site:** em breve na Vercel · **GitHub:** [carloseduardo-rocha](https://github.com/carloseduardo-rocha) · **LinkedIn:** [carlos-eduardo-rocha-da-silva](https://www.linkedin.com/in/carlos-eduardo-rocha-da-silva-408087230/)
+**Site:** [carlos-eduardo-portfolio-red.vercel.app](https://carlos-eduardo-portfolio-red.vercel.app) · **GitHub:** [carloseduardo-rocha](https://github.com/carloseduardo-rocha) · **LinkedIn:** [carlos-eduardo-rocha-da-silva](https://www.linkedin.com/in/carlos-eduardo-rocha-da-silva-408087230/)
 
-Portfólio de Carlos Eduardo, desenvolvedor Full Stack em Fortaleza. Uma abertura em "portal" (partículas em WebGL que formam o logo CE
+Portfólio de Carlos Eduardo, desenvolvedor Full Stack em Fortaleza. Uma abertura em "portal" (partículas em WebGL que formam o logo CR
 e se abrem ao rolar a página) leva às seções: Hero, Trajetória e tecnologias, GestãoCheck, Engrenagem Tech, outros projetos,
 formação e certificados, minigames e contato. Tema escuro e claro, mobile first.
 

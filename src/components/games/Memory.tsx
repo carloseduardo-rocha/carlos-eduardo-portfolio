@@ -96,7 +96,7 @@ export function Memory() {
                 style={{ transform: shown ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
               >
                 <span className="absolute inset-0 grid place-items-center rounded-xl border border-line bg-bg/60 text-accent shadow-[inset_0_0_24px_-10px_var(--color-accent)] [backface-visibility:hidden] hover:border-accent/60">
-                  <span className="font-display text-xl font-bold">CE</span>
+                  <span className="font-display text-xl font-bold">CR</span>
                 </span>
                 <span
                   className={`absolute inset-0 grid place-items-center rounded-xl border px-1 text-center font-display text-[0.8rem] font-bold [backface-visibility:hidden] [transform:rotateY(180deg)] sm:text-sm ${
