@@ -13,6 +13,7 @@ const LOOP_THRESHOLD = 360
  *  4. at the very bottom, extra wheel/touch intent restarts at the top. The last
  *     frame of the outro is the same logo as the first frame of the intro, so the
  *     jump is invisible (a short fade covers the text swap).
+ * If the visitor does nothing for ~5s the intro plays on its own (any wheel, touch, key or click cancels it).
  * Native scroll is never hijacked, so keyboard, scrollbar and iOS momentum keep working.
  *
  * GSAP is imported dynamically so it stays out of the first-paint bundle.
@@ -71,6 +72,8 @@ export function usePortalScroll(root: RefObject<HTMLElement | null>): void {
             },
           })
           .to('.cue', { autoAlpha: 0, y: 14, duration: 0.1 }, 0)
+          // the photo comes in early and fully opaque, so the face is never lost behind the particles
+          .fromTo('.hero-photo', { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.16, ease: 'power2.out' }, 0.3)
           .fromTo(
             '.hero-reveal',
             { opacity: 0, y: 40 },
@@ -147,6 +150,33 @@ export function usePortalScroll(root: RefObject<HTMLElement | null>): void {
         })
       }, el)
 
+      // --- auto-open: if the visitor does nothing for ~5s, the intro plays by itself ---
+      const AUTO_DELAY = 5000
+      let autoTimer = 0
+      let autoTween: ReturnType<typeof gsap.to> | undefined
+      const userEvents = ['wheel', 'touchstart', 'keydown', 'pointerdown'] as const
+      const stopAuto = () => {
+        clearTimeout(autoTimer)
+        autoTween?.kill()
+        userEvents.forEach((e) => removeEventListener(e, stopAuto))
+      }
+      const runAuto = () => {
+        const intro = document.getElementById('intro')
+        if (!intro || window.scrollY > 4 || document.documentElement.dataset.gl === 'off') return stopAuto()
+        const proxy = { y: window.scrollY }
+        autoTween = gsap.to(proxy, {
+          y: intro.offsetHeight - window.innerHeight,
+          duration: 2.2,
+          ease: 'power2.inOut',
+          onUpdate: () => window.scrollTo(0, proxy.y),
+          onComplete: stopAuto,
+        })
+      }
+      if (window.scrollY <= 4 && !location.hash) {
+        userEvents.forEach((e) => addEventListener(e, stopAuto, { passive: true }))
+        autoTimer = window.setTimeout(runAuto, AUTO_DELAY)
+      }
+
       // WebGL failed → behave like a normal page (CSS flattens the layout)
       const flatten = () => {
         observer?.kill()
@@ -159,6 +189,7 @@ export function usePortalScroll(root: RefObject<HTMLElement | null>): void {
       if (document.documentElement.dataset.gl === 'off') flatten()
 
       teardown = () => {
+        stopAuto()
         removeEventListener('portal:flat', flatten)
         observer?.kill()
         ctx.revert()

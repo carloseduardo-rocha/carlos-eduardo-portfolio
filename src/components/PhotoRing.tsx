@@ -31,7 +31,7 @@ export function RingFrame({
           <line key={i} {...t} stroke="currentColor" strokeWidth="0.9" strokeLinecap="round" opacity="0.85" />
         ))}
       </svg>
-      <div className="absolute inset-[9%] overflow-hidden rounded-full border border-line shadow-[0_0_70px_-18px_var(--color-accent)]">
+      <div className="absolute inset-[9%] overflow-hidden rounded-full border border-line bg-bg shadow-[0_0_70px_-18px_var(--color-accent)]">
         {children}
       </div>
     </div>

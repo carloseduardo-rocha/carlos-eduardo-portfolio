@@ -78,7 +78,7 @@ export function Intro() {
               </div>
             </div>
 
-            <div className="hero-reveal order-1 justify-self-start md:order-2 md:justify-self-end">
+            <div className="hero-photo order-1 justify-self-start md:order-2 md:justify-self-end">
               <PhotoRing className="w-[clamp(96px,17svh,150px)] md:w-[clamp(240px,min(33vw,58svh),470px)]" />
             </div>
           </div>
