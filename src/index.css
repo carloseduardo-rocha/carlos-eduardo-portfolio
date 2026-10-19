@@ -1,0 +1,328 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* ---- design tokens: dark is the default, light overrides below ---- */
+@theme {
+  --color-bg: #04070d;
+  --color-fg: #e9f2ff;
+  --color-muted: #8fa3bf;
+  --color-line: rgb(143 163 191 / 0.18);
+  --color-accent: #22e6ff;
+  --color-accent-2: #7a6bff;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+}
+
+:root {
+  /* how many px of scroll the intro / outro "doors" take to open / close */
+  --intro-len: 170vh;
+  --outro-len: 130vh;
+  --vignette: rgb(0 0 0 / 0.6);
+  --grain: 0.07;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --color-bg: #edf1f6;
+  --color-fg: #0b1324;
+  --color-muted: #475a73;
+  --color-line: rgb(11 19 36 / 0.16);
+  --color-accent: #0e7490;
+  --color-accent-2: #5b4bdb;
+  --vignette: rgb(20 40 80 / 0.1);
+  --grain: 0.05;
+  color-scheme: light;
+}
+
+@supports (height: 100svh) {
+  :root {
+    --intro-len: 170svh;
+    --outro-len: 130svh;
+  }
+}
+
+html {
+  background: var(--color-bg);
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: transparent;
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* cinematic vignette + film grain, above the canvas but under the content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 42%, transparent 38%, var(--vignette) 100%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: var(--grain);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---- portal stages ---- */
+.intro {
+  position: relative;
+  height: calc(100vh + var(--intro-len));
+}
+.outro {
+  position: relative;
+  height: calc(100vh + var(--outro-len));
+}
+@supports (height: 100svh) {
+  .intro {
+    height: calc(100svh + var(--intro-len));
+  }
+  .outro {
+    height: calc(100svh + var(--outro-len));
+  }
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+@supports (height: 100svh) {
+  .stage {
+    height: 100svh;
+  }
+}
+
+/* items revealed by the scroll timelines start hidden (no flash before JS) */
+.reveal {
+  opacity: 0;
+}
+
+/* soft halo behind the hero copy so it stays legible over the particles */
+.hero-halo {
+  background: radial-gradient(
+    ellipse 60% 55% at 30% 50%,
+    color-mix(in srgb, var(--color-bg) 72%, transparent),
+    transparent 70%
+  );
+}
+
+/* ---- hero portrait ring ---- */
+
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.ring-spin {
+  animation: ring-spin 120s linear infinite;
+}
+
+/* profile photo per theme (the hidden <img> is lazy, so it never downloads) */
+.photo-light {
+  display: none;
+}
+:root[data-theme="light"] .photo-dark {
+  display: none;
+}
+:root[data-theme="light"] .photo-light {
+  display: block;
+}
+
+/* ---- header fade so scrolling content never collides with the controls ---- */
+.header-fade {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-bg) 85%, transparent), transparent);
+}
+
+/* static first paint (lives inside #root until React mounts and replaces it) */
+.boot {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.boot-cue {
+  align-self: center;
+  letter-spacing: 0.3em;
+}
+
+/* WebGL unavailable / save-data: flatten the experience to a normal page */
+html[data-gl="off"] .intro {
+  height: 100vh;
+}
+html[data-gl="off"] .outro,
+html[data-gl="off"] .cue,
+html[data-gl="off"] .skip {
+  display: none;
+}
+html[data-gl="off"] .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* loop progress bar (outro) */
+.loop-bar {
+  height: 2px;
+  width: min(220px, 60vw);
+  background: var(--color-line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.loop-bar > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(var(--loop, 0));
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --intro-len: 0px;
+    --outro-len: 0px;
+  }
+  .intro {
+    height: 100vh;
+  }
+  .outro {
+    display: none;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .cue,
+  .skip {
+    display: none !important;
+  }
+  .ring-spin {
+    animation: none;
+  }
+}
+
+/* ---- 3D tilt cards (see Tilt.tsx) ---- */
+.tilt {
+  --rx: 0deg;
+  --ry: 0deg;
+  --gx: 50%;
+  --gy: 0%;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+.tilt-glare {
+  opacity: 0;
+  transition: opacity 0.25s;
+  background: radial-gradient(
+    circle at var(--gx) var(--gy),
+    color-mix(in srgb, var(--color-accent) 22%, transparent),
+    transparent 55%
+  );
+}
+.tilt:hover .tilt-glare {
+  opacity: 1;
+}
+
+/* pulse that runs down a flow diagram, one step after another */
+@keyframes flow-step {
+  0%, 100% {
+    border-color: var(--color-line);
+    box-shadow: none;
+  }
+  12%, 28% {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 18px -4px var(--color-accent);
+  }
+}
+.flow-step {
+  animation: flow-step 4.8s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.6s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt {
+    transform: none !important;
+    transition: none;
+  }
+  .flow-step {
+    animation: none;
+  }
+}
+
+/* e2 → e4 on the little chess board */
+@keyframes pawn-e2 {
+  0%, 35%, 100% {
+    transform: translateY(0);
+  }
+  50%, 80% {
+    transform: translateY(-200%);
+  }
+}
+.pawn-e2 {
+  animation: pawn-e2 5s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pawn-e2 {
+    animation: none;
+  }
+}
+
+@keyframes tile-pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.tile-pop {
+  animation: tile-pop 0.18s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile-pop {
+    animation: none;
+  }
+}
+
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.float-y {
+  animation: float-y 5.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .float-y {
+    animation: none;
+  }
+}

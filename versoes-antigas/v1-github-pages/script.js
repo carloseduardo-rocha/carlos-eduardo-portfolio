@@ -176,7 +176,7 @@ function applyThemeToggle() {
   }
   // Apply dark theme settings
   else {
-    img.src = "./assets/brand/avatar.png"
+    img.src = "./assets/brand/avatar.jpg"
     targetParticleColor = "rgba(0, 255, 255, 0.7)"
     localStorage.setItem("theme", "dark")
     if (switchIcon) switchIcon.textContent = "🌙"

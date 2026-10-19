@@ -5,3 +5,22 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Node / Vite
+node_modules
+dist
+dist-ssr
+*.local
+*.log
+logs
+.vite
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+
+# Local review artifacts
+.playwright-mcp
+.shots

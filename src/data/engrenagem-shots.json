@@ -1,0 +1,47 @@
+{
+  "hero-desktop": {
+    "w": 1400,
+    "h": 875,
+    "kb": 42
+  },
+  "demos-desktop": {
+    "w": 1400,
+    "h": 1461,
+    "kb": 67
+  },
+  "hero-mobile": {
+    "w": 520,
+    "h": 1125,
+    "kb": 37
+  },
+  "dom-navalha": {
+    "w": 1000,
+    "h": 851,
+    "kb": 28
+  },
+  "sorrir-aldeota": {
+    "w": 1000,
+    "h": 851,
+    "kb": 28
+  },
+  "brasa-smash": {
+    "w": 1000,
+    "h": 851,
+    "kb": 36
+  },
+  "studio-jasmim": {
+    "w": 1000,
+    "h": 851,
+    "kb": 27
+  },
+  "casa-forte": {
+    "w": 1000,
+    "h": 851,
+    "kb": 32
+  },
+  "auto-center-parangaba": {
+    "w": 1000,
+    "h": 851,
+    "kb": 38
+  }
+}
