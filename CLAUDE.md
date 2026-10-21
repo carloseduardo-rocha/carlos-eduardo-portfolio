@@ -57,7 +57,7 @@ Fontes: Space Grotesk (display), Inter (texto), JetBrains Mono (rótulos) — s�
 
 ## Deploy (Vercel) — pronto, ele só faz o push
 `vercel.json` (CSP sem scripts inline, HSTS, cache), `vite.config.ts` (plugin site-meta: og:url/canonical/sitemap/robots a partir de
-`SITE_URL` ou `VERCEL_PROJECT_PRODUCTION_URL`), scripts inline viraram `public/theme-init.js` e `src/boot.ts`. `npm run preview` aplica os mesmos headers
+`SITE_URL` ou `VERCEL_PROJECT_PRODUCTION_URL`), scripts inline viraram `public/theme-init.js` e `src/boot.ts` (pinta a casca estática antes de montar o app). `npm run preview` aplica os mesmos headers
 (testado: sem violação de CSP, PDF em iframe funciona). README explica o passo a passo. **Nunca** commit/push: só entregar o texto.
 
 ## Estado

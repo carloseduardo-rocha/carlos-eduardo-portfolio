@@ -32,7 +32,7 @@ export function Intro() {
                 requisitos ao deploy: hoje em produção no GestãoCheck, um ERP usado por clientes reais.
               </p>
               <div
-                className="hero-reveal mt-5 max-w-xl overflow-hidden rounded-xl border border-line bg-bg/60 font-mono text-[0.72rem] leading-relaxed backdrop-blur-md [@media(max-height:760px)]:hidden md:text-[0.8rem]"
+                className="hero-reveal mt-5 max-w-xl overflow-hidden rounded-xl border border-line bg-bg/60 font-mono text-[0.72rem] leading-relaxed md:backdrop-blur-md [@media(max-height:760px)]:hidden md:text-[0.8rem]"
                 role="group"
                 aria-label="Resumo"
               >
@@ -69,7 +69,7 @@ export function Intro() {
                     className={
                       l.primary
                         ? 'rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-bg shadow-[0_0_28px_-6px_var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
-                        : 'rounded-full border border-line px-5 py-2.5 text-sm font-medium text-fg backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
+                        : 'rounded-full border border-line px-5 py-2.5 text-sm font-medium text-fg md:backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
                     }
                   >
                     {l.label}

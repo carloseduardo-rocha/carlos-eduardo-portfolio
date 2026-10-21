@@ -22,7 +22,7 @@ export function Outro() {
               onClick={toTop}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="cursor-pointer rounded-full border border-line px-5 py-2 text-sm font-medium text-fg backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="cursor-pointer rounded-full border border-line px-5 py-2 text-sm font-medium text-fg md:backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               Voltar ao início ↑
             </m.button>

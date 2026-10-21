@@ -142,7 +142,7 @@ function Card({ item, onOpen, large = false }: { item: Item; onOpen: (i: Item) =
       )}
     </>
   )
-  const base = 'h-full w-full rounded-2xl border border-line bg-bg/55 p-5 text-left backdrop-blur-md'
+  const base = 'h-full w-full rounded-2xl border border-line bg-bg/75 md:bg-bg/55 p-5 text-left md:backdrop-blur-md'
   return item.pdf ? (
     <button
       type="button"

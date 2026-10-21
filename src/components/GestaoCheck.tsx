@@ -119,7 +119,7 @@ function ShotViewer() {
       onBlur={() => setPaused(false)}
     >
       <div className="relative">
-        <div className="overflow-hidden rounded-2xl border border-line bg-bg/60 shadow-[0_30px_80px_-30px_rgb(0_0_0/0.55)] backdrop-blur-md">
+        <div className="overflow-hidden rounded-2xl border border-line bg-bg/60 shadow-[0_30px_80px_-30px_rgb(0_0_0/0.55)] md:backdrop-blur-md">
           <div className="flex items-center gap-2 border-b border-line px-4 py-2.5" aria-hidden="true">
             <span className="size-2.5 rounded-full bg-[#ff5f57]" />
             <span className="size-2.5 rounded-full bg-[#febc2e]" />
@@ -254,7 +254,7 @@ export function GestaoCheck() {
           </ul>
 
           <dl className="mt-8 grid grid-cols-2 gap-4">
-            <div className="rounded-2xl border border-line bg-bg/55 p-5 backdrop-blur-md">
+            <div className="rounded-2xl border border-line bg-bg/75 md:bg-bg/55 p-5 md:backdrop-blur-md">
               <dt className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted">
                 Módulos
               </dt>
@@ -262,7 +262,7 @@ export function GestaoCheck() {
                 <Counter to={16} suffix="+" />
               </dd>
             </div>
-            <div className="rounded-2xl border border-line bg-bg/55 p-5 backdrop-blur-md">
+            <div className="rounded-2xl border border-line bg-bg/75 md:bg-bg/55 p-5 md:backdrop-blur-md">
               <dt className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted">
                 Testes automatizados
               </dt>

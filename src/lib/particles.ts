@@ -125,7 +125,7 @@ export async function createParticleScene(
 ): Promise<() => void> {
   const coarse = matchMedia('(pointer: coarse)').matches || innerWidth < 768
   const lowEnd = (navigator.hardwareConcurrency ?? 8) <= 4
-  const count = Math.round((coarse ? 3200 : 9000) * (lowEnd ? 0.7 : 1))
+  const count = Math.round((coarse ? 2000 : 9000) * (lowEnd ? 0.7 : 1))
 
   // visitors who asked to save data (or on very low-memory devices) get the flat page
   const nav = navigator as Navigator & { connection?: { saveData?: boolean }; deviceMemory?: number }
@@ -206,7 +206,7 @@ export async function createParticleScene(
   function resize() {
     const w = innerWidth
     const h = innerHeight
-    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, coarse ? 1.5 : 2))
+    renderer.setPixelRatio(coarse ? 1 : Math.min(devicePixelRatio || 1, 2))
     renderer.setSize(w, h, false)
     camera.aspect = w / h
     const visH = 2 * CAMERA_Z_CLOSED * Math.tan((FOV * Math.PI) / 360)
@@ -236,7 +236,13 @@ export async function createParticleScene(
     renderer.render(scene, camera)
   }
 
+  // phones: cap the frame rate (30fps while opening, 20fps once the field only drifts behind the content)
   function frame(now: number) {
+    const minDelta = coarse ? (u > 0.995 ? 50 : 33) : 0
+    if (now - last < minDelta - 2) {
+      raf = requestAnimationFrame(frame)
+      return
+    }
     const dt = Math.min((now - last) / 1000, 0.05)
     last = now
     draw(dt)

@@ -11,6 +11,7 @@ import { Intro } from '@/components/Intro'
 import { Outro } from '@/components/Outro'
 import { ParticleStage } from '@/components/ParticleStage'
 import { Projects } from '@/components/Projects'
+import { Staged } from '@/components/Staged'
 import { usePortalScroll } from '@/hooks/usePortalScroll'
 
 export default function App() {
@@ -25,13 +26,18 @@ export default function App() {
           <Header />
           <main className="relative z-10">
             <Intro />
-            <About />
-            <GestaoCheck />
-            <Engrenagem />
-            <Projects />
-            <Education />
-            <Games />
-            <Contact />
+            {/* below-the-fold sections mount one by one while the browser is idle (see Staged) */}
+            <Staged>
+              {[
+                <About key="sobre" />,
+                <GestaoCheck key="gestaocheck" />,
+                <Engrenagem key="engrenagem" />,
+                <Projects key="projetos" />,
+                <Education key="formacao" />,
+                <Games key="games" />,
+                <Contact key="contato" />,
+              ]}
+            </Staged>
             <Outro />
           </main>
           {/* brief fade used to hide the jump back to the top when the loop restarts */}

@@ -61,10 +61,10 @@ export function Contact() {
                   href={c.href}
                   target={c.href.startsWith('mailto:') ? undefined : '_blank'}
                   rel={c.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                  className={`group flex h-full flex-col rounded-2xl border p-5 backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+                  className={`group flex h-full flex-col rounded-2xl border p-5 md:backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                     'primary' in c && c.primary
                       ? 'border-accent/60 bg-accent/10 hover:bg-accent/15'
-                      : 'border-line bg-bg/55 hover:border-accent/60'
+                      : 'border-line bg-bg/75 md:bg-bg/55 hover:border-accent/60'
                   }`}
                 >
                   <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-accent">{c.label}</span>

@@ -181,7 +181,7 @@ const projects: Project[] = [
 function Details({ p, onClose }: { p: Project; onClose: () => void }) {
   return (
     <div>
-      <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-line bg-bg/95 px-5 py-3 backdrop-blur">
+      <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-line bg-bg/95 px-5 py-3 md:backdrop-blur">
         <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-accent">{p.period}</p>
         <button
           type="button"
@@ -278,7 +278,7 @@ export function Projects() {
                 type="button"
                 onClick={() => setOpen(p)}
                 aria-haspopup="dialog"
-                className="flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-line bg-bg/55 text-left backdrop-blur-md transition-colors hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-line bg-bg/75 md:bg-bg/55 text-left md:backdrop-blur-md transition-colors hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <div className="h-56 w-full border-b border-line bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,var(--color-accent)_16%,transparent),transparent_70%)] py-4">
                   {p.visual}

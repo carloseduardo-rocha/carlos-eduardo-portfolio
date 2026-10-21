@@ -81,7 +81,7 @@ export function About() {
                 s.current ? 'bg-accent shadow-[0_0_16px_var(--color-accent)]' : 'bg-bg'
               }`}
             />
-            <div className="h-full rounded-2xl border border-line bg-bg/55 p-5 backdrop-blur-md transition-colors hover:border-accent/60">
+            <div className="h-full rounded-2xl border border-line bg-bg/75 md:bg-bg/55 p-5 md:backdrop-blur-md transition-colors hover:border-accent/60">
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-accent">
                 {s.when}
               </p>

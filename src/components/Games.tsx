@@ -75,7 +75,7 @@ export function Games() {
         id="game-panel"
         role="tabpanel"
         aria-labelledby={`game-tab-${game.id}`}
-        className="mt-8 flex min-h-[34rem] justify-center rounded-3xl border border-line bg-bg/55 p-5 backdrop-blur-md md:p-8"
+        className="mt-8 flex min-h-[34rem] justify-center rounded-3xl border border-line bg-bg/75 md:bg-bg/55 p-5 md:backdrop-blur-md md:p-8"
       >
         {near ? (
           <Suspense fallback={<p className="self-center font-mono text-xs uppercase tracking-[0.2em] text-muted">Carregando…</p>}>

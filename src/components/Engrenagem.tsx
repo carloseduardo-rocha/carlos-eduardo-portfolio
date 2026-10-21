@@ -60,7 +60,7 @@ export function Engrenagem() {
 
           <ul className="mt-8 grid gap-3">
             {offers.map((o) => (
-              <li key={o.title} className="rounded-2xl border border-line bg-bg/55 p-5 backdrop-blur-md">
+              <li key={o.title} className="rounded-2xl border border-line bg-bg/75 md:bg-bg/55 p-5 md:backdrop-blur-md">
                 <h3 className="font-display text-lg font-bold">{o.title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted">{o.text}</p>
               </li>
@@ -144,7 +144,7 @@ export function Engrenagem() {
                   href={`${SITE}exemplos/${d.slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block overflow-hidden rounded-2xl border border-line bg-bg/55 backdrop-blur-md transition-colors hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="group block overflow-hidden rounded-2xl border border-line bg-bg/75 md:bg-bg/55 md:backdrop-blur-md transition-colors hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <img
                     src={`/engrenagem/${d.img}.webp`}

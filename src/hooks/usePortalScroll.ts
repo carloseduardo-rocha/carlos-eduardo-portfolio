@@ -194,7 +194,10 @@ export function usePortalScroll(root: RefObject<HTMLElement | null>): void {
         observer?.kill()
         ctx.revert()
       }
-    })()
+    })().catch(() => {
+      // GSAP failed to load: show the page without the portal (the hero is hidden until GSAP reveals it)
+      document.documentElement.dataset.gl = 'off'
+    })
 
     return () => {
       disposed = true

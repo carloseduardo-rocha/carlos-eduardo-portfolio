@@ -13,7 +13,7 @@ export function ThemeToggle() {
       whileHover={{ scale: 1.06 }}
       whileTap={{ scale: 0.94 }}
       aria-label={next === 'light' ? 'Mudar para o tema claro' : 'Mudar para o tema escuro'}
-      className="grid size-9 cursor-pointer place-items-center rounded-full border border-line text-muted backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      className="grid size-9 cursor-pointer place-items-center rounded-full border border-line text-muted md:backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
       {theme === 'dark' ? (
         // sun → "go light"

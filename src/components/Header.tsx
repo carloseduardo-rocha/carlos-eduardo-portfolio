@@ -22,7 +22,7 @@ export function Header() {
             onClick={skipIntro}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="skip cursor-pointer rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-[0.18em] text-muted backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="skip cursor-pointer rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-[0.18em] text-muted md:backdrop-blur transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Pular intro
           </m.button>

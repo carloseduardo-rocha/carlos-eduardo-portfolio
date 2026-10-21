@@ -68,7 +68,7 @@ function Group({ g, i }: { g: (typeof groups)[number]; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-8%' }}
       transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="rounded-2xl border border-line bg-bg/55 p-5 backdrop-blur-md"
+      className="rounded-2xl border border-line bg-bg/75 md:bg-bg/55 p-5 md:backdrop-blur-md"
     >
       <div className="flex items-center justify-between gap-3">
         <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-accent">{g.title}</h4>
