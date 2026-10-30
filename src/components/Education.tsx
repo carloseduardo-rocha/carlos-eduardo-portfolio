@@ -21,8 +21,9 @@ const degrees: Item[] = [
   {
     title: 'Computação Forense e Perícia Digital',
     issuer: 'Unopar (EAD) · Pós-graduação',
-    when: 'dez/2025 — out/2026 · em conclusão',
-    text: 'Área de investigação e perícia em dados digitais. Conclusão prevista para outubro de 2026.',
+    when: 'dez/2025 — out/2026 · concluída',
+    text: 'Pós-graduação lato sensu de 360 horas. Computação forense, cibercrimes, segurança em redes, criptografia, LGPD e auditoria de sistemas.',
+    pdf: '/certificados/pos-computacao-forense-unopar.pdf',
   },
 ]
 

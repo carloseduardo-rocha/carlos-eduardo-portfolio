@@ -47,7 +47,7 @@ Fontes: Space Grotesk (display), Inter (texto), JetBrains Mono (rótulos) — s�
   Fonte das imagens: `scripts/optimize-art.mjs`. Não mandar foto dele pra serviço externo (ex.: remover fundo).
 - Currículo = `public/Curriculo_Carlos_Eduardo_Dev.pdf`. GestãoCheck = https://gestaocheck.tech/ (fora do ar por ora, manter o link).
 - LinkedIn = linkedin.com/in/carlos-eduardo-rocha-da-silva-408087230/. **Sem número de clientes** (só "tem clientes").
-- ADS = fev/2023 — jul/2025 (ele confirmou). Pós Unopar = dez/2025 — out/2026.
+- ADS = fev/2023 — jul/2025 (ele confirmou). Pós Unopar = dez/2025 — out/2026, CONCLUÍDA (certificado em `public/certificados/pos-computacao-forense-unopar.pdf`, versão sem RG/CPF; nunca publicar a versão com documentos).
 - O PDF "Domine as 10 Melhores Ferramentas de IA" fica de fora. O site antigo NÃO leva hotfix; tudo se corrige aqui.
 - Nomes dos fundadores (Antonio/Jarbas) não aparecem no site.
 - Janelas de print têm as 3 bolinhas coloridas (#ff5f57 / #febc2e / #28c840), não trocar por cinza.
