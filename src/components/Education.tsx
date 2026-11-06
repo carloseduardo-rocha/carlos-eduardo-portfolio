@@ -117,7 +117,6 @@ function CertDialog({ item, onClose }: { item: Item | null; onClose: () => void 
               <button
                 type="button"
                 onClick={onClose}
-                autoFocus
                 className="cursor-pointer rounded-full border border-line px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-fg transition-colors hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 Fechar
@@ -131,15 +130,25 @@ function CertDialog({ item, onClose }: { item: Item | null; onClose: () => void 
   )
 }
 
-function Card({ item, onOpen, large = false }: { item: Item; onOpen: (i: Item) => void; large?: boolean }) {
+function Card({
+  item,
+  onOpen,
+  large = false,
+  as: Heading = 'h4',
+}: {
+  item: Item
+  onOpen: (i: Item) => void
+  large?: boolean
+  as?: 'h3' | 'h4'
+}) {
   const body = (
     <>
       <p className="font-mono text-[0.66rem] uppercase tracking-[0.16em] text-accent">{item.when}</p>
-      <h4 className={`mt-2 font-display font-bold leading-snug ${large ? 'text-xl' : 'text-base'}`}>{item.title}</h4>
+      <Heading className={`mt-2 font-display font-bold leading-snug ${large ? 'text-xl' : 'text-base'}`}>{item.title}</Heading>
       <p className="mt-1 text-xs font-medium text-fg/75">{item.issuer}</p>
       <p className="mt-3 text-sm leading-relaxed text-muted">{item.text}</p>
       {item.pdf && (
-        <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-accent">Ver certificado →</p>
+        <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-link">Ver certificado →</p>
       )}
     </>
   )
@@ -177,7 +186,7 @@ export function Education() {
       >
         {degrees.map((d) => (
           <li key={d.title}>
-            <Card item={d} onOpen={setOpen} large />
+            <Card item={d} onOpen={setOpen} large as="h3" />
           </li>
         ))}
       </m.ul>

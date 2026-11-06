@@ -154,7 +154,7 @@ export function TicTacToe() {
             aria-label={`Casa ${i + 1}${c ? `: ${c}` : ''}`}
             className={`cursor-pointer rounded-xl border font-display text-5xl font-bold transition-colors enabled:hover:border-accent/60 enabled:hover:bg-accent/5 disabled:cursor-default focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:text-6xl ${
               winLine.includes(i) ? 'border-accent bg-accent/15' : 'border-line bg-bg/40'
-            } ${c === 'X' ? 'text-accent' : 'text-accent-2'}`}
+            } ${c === 'X' ? 'text-accent' : 'text-link'}`}
           >
             {c}
           </button>

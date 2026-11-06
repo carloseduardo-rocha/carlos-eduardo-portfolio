@@ -17,8 +17,8 @@ import { THEME_EVENT, getTheme } from './theme'
 
 /** Dark: glowing additive points. Light: ink-colored points with normal blending. */
 const PALETTE = {
-  dark: { a: '#22e6ff', b: '#7a6bff', whiten: 0.25, blending: AdditiveBlending },
-  light: { a: '#0e7490', b: '#5b4bdb', whiten: 0, blending: NormalBlending },
+  dark: { a: '#22e6ff', b: '#5b93f5', whiten: 0.25, blending: AdditiveBlending },
+  light: { a: '#0e7490', b: '#1558c9', whiten: 0, blending: NormalBlending },
 } as const
 
 const VERT = /* glsl */ `

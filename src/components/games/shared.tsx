@@ -10,7 +10,10 @@ export type Palette = {
   muted: string
   line: string
   accent: string
-  accent2: string
+  /** link blue (cobalt on light): second player, opponents */
+  secondary: string
+  /** lime on dark, olive on light: pickups */
+  lime: string
 }
 
 function readPalette(): Palette {
@@ -22,14 +25,15 @@ function readPalette(): Palette {
     muted: g('--color-muted'),
     line: g('--color-line'),
     accent: g('--color-accent'),
-    accent2: g('--color-accent-2'),
+    secondary: g('--color-link'),
+    lime: g('--color-lime'),
   }
 }
 
 /** Live theme colors for canvas drawing (refreshed whenever the theme flips). */
 export function usePalette(): RefObject<Palette> {
   const theme = useTheme()
-  const ref = useRef<Palette>({ bg: '#04070d', fg: '#e9f2ff', muted: '#8fa3bf', line: '#33415a', accent: '#22e6ff', accent2: '#7a6bff' })
+  const ref = useRef<Palette>({ bg: '#04070d', fg: '#e9f2ff', muted: '#8fa3bf', line: '#33415a', accent: '#22e6ff', secondary: '#5b93f5', lime: '#d4ff24' })
   useEffect(() => {
     ref.current = readPalette()
   }, [theme])

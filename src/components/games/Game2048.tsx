@@ -121,7 +121,7 @@ export function Game2048() {
       ref={wrap}
       tabIndex={0}
       onKeyDown={onKey}
-      className="flex w-full max-w-[420px] flex-col items-center gap-4 outline-none"
+      className="flex w-full max-w-[420px] flex-col items-center gap-4 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       aria-label="2048. Use as setas para juntar números iguais."
     >
       <div className="flex w-full items-end justify-between">

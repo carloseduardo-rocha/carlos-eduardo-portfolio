@@ -52,7 +52,7 @@ export function Intro() {
                       <dt className="text-muted">
                         <span className="text-accent">$</span> {cmd}
                       </dt>
-                      <dd className="text-fg/90">{out}</dd>
+                      <dd className={cmd === 'status' ? 'text-lime' : 'text-fg/90'}>{out}</dd>
                     </div>
                   ))}
                 </dl>

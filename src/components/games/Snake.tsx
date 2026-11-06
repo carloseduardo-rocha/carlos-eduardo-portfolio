@@ -173,9 +173,9 @@ export function Snake() {
     // food, softly pulsing
     const pulse = 1 + Math.sin(performance.now() / 220) * 0.12
     ctx.save()
-    ctx.shadowColor = p.accent2
+    ctx.shadowColor = p.lime
     ctx.shadowBlur = 14
-    ctx.fillStyle = p.accent2
+    ctx.fillStyle = p.lime
     ctx.beginPath()
     ctx.arc(s.food.x * CELL + CELL / 2, s.food.y * CELL + CELL / 2, CELL * 0.34 * pulse, 0, Math.PI * 2)
     ctx.fill()
@@ -220,7 +220,7 @@ export function Snake() {
 
     for (const sp of s.sparks) {
       ctx.globalAlpha = Math.max(0, sp.life * 2)
-      ctx.fillStyle = sp.gold ? '#ffc233' : p.accent2
+      ctx.fillStyle = sp.gold ? '#ffc233' : p.lime
       ctx.beginPath()
       ctx.arc(sp.x, sp.y, 2.2, 0, Math.PI * 2)
       ctx.fill()
@@ -301,7 +301,7 @@ export function Snake() {
       ref={wrap}
       tabIndex={0}
       onKeyDown={onKey}
-      className="flex flex-col items-center gap-4 outline-none"
+      className="flex flex-col items-center gap-4 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       aria-label="Snake. Use as setas ou WASD."
     >
       <div className="flex w-full max-w-[420px] items-end justify-between">

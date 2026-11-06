@@ -8,7 +8,12 @@
   --color-muted: #8fa3bf;
   --color-line: rgb(143 163 191 / 0.18);
   --color-accent: #22e6ff;
-  --color-accent-2: #7a6bff;
+  /* palette B: cobalt supports (buttons with white text); link blue is the text/link blue on dark;
+     lime is a rare detail (status, a word) and always carries dark text */
+  --color-cobalt: #1558c9;
+  --color-link: #5b93f5;
+  --color-lime: #d4ff24;
+  --color-on-lime: #04070d;
 
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, sans-serif;
@@ -30,7 +35,10 @@
   --color-muted: #475a73;
   --color-line: rgb(11 19 36 / 0.16);
   --color-accent: #0e7490;
-  --color-accent-2: #5b4bdb;
+  /* lime has 1.2:1 on light backgrounds: it becomes a dark olive (5.8:1) and the link blue becomes the cobalt (5.7:1) */
+  --color-link: #1558c9;
+  --color-lime: #4d6600;
+  --color-on-lime: #ffffff;
   --vignette: rgb(20 40 80 / 0.1);
   --grain: 0.05;
   color-scheme: light;
@@ -41,6 +49,12 @@
     --intro-len: 170svh;
     --outro-len: 130svh;
   }
+}
+
+a,
+button,
+[role="tab"] {
+  touch-action: manipulation;
 }
 
 html {
@@ -206,7 +220,7 @@ html[data-gl="off"] .hero-photo {
   width: 100%;
   transform-origin: left center;
   transform: scaleX(var(--loop, 0));
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  background: var(--color-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -49,7 +49,7 @@ export function Engrenagem() {
       <div className="mt-8 grid gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-14">
         <m.div {...reveal}>
           <p className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted">
-            <span className="size-1.5 rounded-full bg-accent shadow-[0_0_8px_var(--color-accent)]" />
+            <span className="size-1.5 rounded-full bg-lime" />
             Engrenagem Tech · Fortaleza
           </p>
           <p className="mt-5 text-lg leading-relaxed text-fg/90">
@@ -82,7 +82,7 @@ export function Engrenagem() {
               rel="noopener noreferrer"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg shadow-[0_0_28px_-6px_var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-block rounded-full bg-cobalt px-6 py-3 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               Conhecer a Engrenagem →
             </m.a>

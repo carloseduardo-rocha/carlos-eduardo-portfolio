@@ -306,7 +306,7 @@ export function JavaVsAI() {
       ref={wrap}
       tabIndex={0}
       onKeyDown={onKey}
-      className="flex flex-col items-center gap-4 outline-none"
+      className="flex flex-col items-center gap-4 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       aria-label="Java vs IA. Aperte espaço para pular."
     >
       <div className="flex w-full max-w-[420px] items-end justify-between">

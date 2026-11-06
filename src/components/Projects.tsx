@@ -186,7 +186,6 @@ function Details({ p, onClose }: { p: Project; onClose: () => void }) {
         <button
           type="button"
           onClick={onClose}
-          autoFocus
           className="cursor-pointer rounded-full border border-line px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.14em] transition-colors hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Fechar
@@ -243,7 +242,7 @@ function Details({ p, onClose }: { p: Project; onClose: () => void }) {
           href={p.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg shadow-[0_0_28px_-6px_var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="mt-8 inline-block rounded-full bg-cobalt px-6 py-3 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Ver no GitHub →
         </a>
@@ -292,7 +291,7 @@ export function Projects() {
                       <Chip key={s}>{s}</Chip>
                     ))}
                   </ul>
-                  <span className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+                  <span className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-link">
                     Ver detalhes →
                   </span>
                 </div>

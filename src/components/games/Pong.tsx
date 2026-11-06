@@ -140,7 +140,7 @@ export function Pong() {
     ctx.beginPath()
     ctx.roundRect(PX, s.py - PH / 2, PW, PH, 4)
     ctx.fill()
-    ctx.fillStyle = p.accent2
+    ctx.fillStyle = p.secondary
     ctx.beginPath()
     ctx.roundRect(SIZE - PX - PW, s.cy - PH / 2, PW, PH, 4)
     ctx.fill()
@@ -203,7 +203,7 @@ export function Pong() {
       onBlur={() => {
         g.current.up = g.current.down = false
       }}
-      className="flex flex-col items-center gap-4 outline-none"
+      className="flex flex-col items-center gap-4 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       aria-label="Pong. Use as setas ou W e S."
     >
       <div className="flex w-full max-w-[420px] items-end justify-between">

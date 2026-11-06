@@ -8,7 +8,7 @@ export function SectionHeading({ n, id, title }: { n: string; id: string; title:
       </div>
       <h2
         id={id}
-        className="mt-5 font-display text-[clamp(1.8rem,5vw,3.4rem)] font-bold leading-tight tracking-tight"
+        className="mt-5 font-display text-[clamp(1.8rem,5vw,3.4rem)] font-bold leading-tight tracking-tight text-balance"
       >
         {title}
       </h2>

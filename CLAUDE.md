@@ -55,6 +55,14 @@ Fontes: Space Grotesk (display), Inter (texto), JetBrains Mono (rótulos) — s�
 - Jogos (6): Snake (rostinho, estrela bônus, acelera), Jogo da Velha (CPU / CPU difícil minimax / amigo), Pong (3 níveis), Java vs IA, Memória Dev, 2048.
 - Skills (3 grupos aprovados por ele) ficam em `Skills.tsx`, dentro de Sobre. Só tem descrição onde há fonte.
 
+## Cores (paleta B, 05/11/2026) — base: `Empresa Engrenagem TechDocumentosDesign - base`
+- Fica: fundo #04070D, texto #E9F2FF, cinza #8FA3BF, ciano #22E6FF (principal, partículas, logo CR). Tema claro com o mesmo esquema de antes.
+- **Sem roxo em lugar nenhum** (o antigo `--color-accent-2` foi removido). Partículas: ciano + azul (#5B93F5 no escuro, #1558C9 no claro).
+- Tokens em `src/index.css`: `--color-cobalt` #1558C9 (botão com texto branco), `--color-link` (#5B93F5 no escuro / #1558C9 no claro, texto e link),
+  `--color-lime` (#D4FF24 no escuro, **#4D6600 oliva no claro**, lima nunca em fundo claro) com `--color-on-lime` (texto em cima). Lima só como detalhe/status.
+- Usos: lima = linha "disponível" do hero, bolinhas de status, comida da cobrinha; cobalto = botões secundários (Engrenagem, GitHub no modal); link = "Ver detalhes", "Ver certificado", O do jogo da velha, raquete da CPU.
+- Contrastes medidos (WCAG, todos ≥ 4,5:1 nos dois temas). Não mexer nas 3 bolinhas das janelas de print (#ff5f57 / #febc2e / #28c840).
+
 ## Deploy (Vercel) — pronto, ele só faz o push
 `vercel.json` (CSP sem scripts inline, HSTS, cache), `vite.config.ts` (plugin site-meta: og:url/canonical/sitemap/robots a partir de
 `SITE_URL` ou `VERCEL_PROJECT_PRODUCTION_URL`), scripts inline viraram `public/theme-init.js` e `src/boot.ts` (pinta a casca estática antes de montar o app). `npm run preview` aplica os mesmos headers

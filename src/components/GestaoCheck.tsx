@@ -233,7 +233,7 @@ export function GestaoCheck() {
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted">
-            <span className="size-1.5 rounded-full bg-accent shadow-[0_0_8px_var(--color-accent)]" />
+            <span className="size-1.5 rounded-full bg-lime" />
             Projeto em destaque · clientes reais
           </p>
           <p className="mt-5 text-lg leading-relaxed text-fg/90">
